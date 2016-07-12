@@ -40,5 +40,3 @@ Route::post('register', function(Request $request){
 
 
 
-
-// Till laravel second class
