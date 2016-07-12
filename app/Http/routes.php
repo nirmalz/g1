@@ -11,6 +11,14 @@
 |
 */
 
+function pre($data){
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+}
+
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,5 +26,19 @@ Route::get('/', function () {
 Route::get('register', function(){
     return view('form');
 });
+
+Route::post('register', function(Request $request){
+
+    pre($request->all());
+
+    $validator = Validator::make($request->all(), array(
+
+    ));
+
+
+});
+
+
+
 
 // Till laravel second class
