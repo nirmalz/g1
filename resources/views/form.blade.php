@@ -10,6 +10,14 @@
 
 <body>
 
+@if(count($errors))
+    <ul>
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+@endif
+
 <form action="{{ url('register') }}" method="post">
 
     {{ csrf_field() }}

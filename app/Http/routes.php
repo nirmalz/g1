@@ -27,16 +27,7 @@ Route::get('register', function(){
     return view('form');
 });
 
-Route::post('register', function(Request $request){
-
-    pre($request->all());
-
-    $validator = Validator::make($request->all(), array(
-
-    ));
-
-
-});
+Route::post('register', 'StudentController@createStudent');
 
 
 
