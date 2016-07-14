@@ -23,11 +23,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('register', function(){
-    return view('form');
-});
-
+Route::get('register', 'StudentController@displayForm');
 Route::post('register', 'StudentController@createStudent');
-
-
-
