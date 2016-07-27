@@ -27,3 +27,5 @@ Route::get('/', function () {
 //Route::post('register', 'StudentController@createStudent');
 Route::auth();
 Route::get('/home', 'HomeController@index');
+
+Route::get('dashboard', 'UserController@displaydash');
