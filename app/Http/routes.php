@@ -29,3 +29,10 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('dashboard', 'UserController@displaydash');
+
+// route to create author
+Route::post('create-author', 'UserController@createAuthor');
+
+
+//
+Route::post('create-article', 'ArticleController@createArticle');
