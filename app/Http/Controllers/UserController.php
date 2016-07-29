@@ -45,7 +45,11 @@ class UserController extends Controller
 
     public function authorDash(){
 
-        return view('authorDash');
+        $articles = Auth::user()->articles;
+
+        return view('authorDash', array(
+            'articles'  => $articles
+        ));
 
     }
 

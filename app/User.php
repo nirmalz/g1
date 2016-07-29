@@ -28,4 +28,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // method defining relationship with article
+    public function articles(){
+        return $this->hasMany('App\Article');
+    }
+
+    // method defining relationship with comment
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
+
 }

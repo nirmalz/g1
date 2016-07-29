@@ -13,4 +13,12 @@ class Comment extends Model
         'user_id'
     );
 
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
+    public function article(){
+        return $this->belongsTo('App\Article');
+    }
+
 }

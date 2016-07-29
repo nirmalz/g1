@@ -19,9 +19,7 @@ function pre($data){
 
 use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SiteController@viewHome');
 
 //Route::get('register', 'StudentController@displayForm');
 //Route::post('register', 'StudentController@createStudent');
@@ -36,3 +34,7 @@ Route::post('create-author', 'UserController@createAuthor');
 
 //
 Route::post('create-article', 'ArticleController@createArticle');
+
+Route::get('article/{article_id}', 'ArticleController@viewArticle');
+
+Route::post('post-comment/{article_id}', 'CommentController@postComment');

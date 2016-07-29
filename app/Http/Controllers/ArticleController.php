@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class ArticleController extends Controller
@@ -26,6 +28,25 @@ class ArticleController extends Controller
                  ->withInput();
         }
 
+
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+
+        Article::create($data);
+
+        return redirect('dashboard');
+
+    }
+
+    public function viewArticle($article_id){
+
+        $article    = Article::find($article_id);
+        $comments   = $article->comments;
+
+        return view('article', array(
+            'article'   => $article,
+            'comments'  => $comments
+        ));
 
     }
 
